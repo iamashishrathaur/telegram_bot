@@ -104,11 +104,9 @@ bot.command('contract', (ctx) => {
     ]));
 });
 
-bot.launch().then(() => {
-    console.log('Bot started');
-}).catch((err) => {
-    console.error('Error starting bot:', err);
-});
-console.log("bot start");
+bot.launch(()=>{
+    console.log("bot start");
+})
+
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
